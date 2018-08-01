@@ -8,13 +8,15 @@ import java.util.regex.*;
 
 public class LeftRotation {
        public static int[] rotLeft(int[] a, int d) {
-        // Complete the rotLeft function below. 
+        // (int[] a, int d) -> int[] 
+        //Rotates the int array a to the left d times
         int rotations = d;
         int length = a.length;
         int[] array_copy = new int[length];
         System.arraycopy(a, 0, array_copy, 0, length );
 
         if(rotations > length){
+            //This program needs to iterate the number of rotations IF it is greater than the length.
             for(int i = 0; i < rotations; i++){
                 int next = (i - rotations) % length;
                 if (next < 0){
@@ -25,6 +27,7 @@ public class LeftRotation {
             }
         }
         else if(length > rotations){
+            //This program needs to iterate the length of array times IF the length is greater than amount of rotations. This prevents items in the array not moving.
             for(int i = 0; i < length; i++){
                 int next = (i - rotations) % length;
 
